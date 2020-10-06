@@ -1,6 +1,6 @@
 from flask import Flask,request,render_template
 import requests
-from .fIleuploader import FileUploader
+from .fileuploader import FileUploader
 from . import uploader
 import sys,os
 from .. import getuploadpath
