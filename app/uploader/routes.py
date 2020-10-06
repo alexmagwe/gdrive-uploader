@@ -4,11 +4,6 @@ from .Fileuploader import FileUploader
 from . import uploader
 import sys,os
 from .. import getuploadpath
-def find_file(name):
-    api="https://uon-notes-api.herokuapp.com/api/exists"
-    data={"name":name}
-    resp=requests.post(api,json=data)
-    return resp
 
 def savefile(file,code='',toupload=False):
     if toupload:
@@ -40,9 +35,6 @@ def upload():
                 return res,500
             if (path:=res.get('path')):
                 obj=FileUploader(path,file.filename)
-                exists=find_file(obj.name)
-                if exists:
-                    continue
                 uploaded=obj.driveupload(creds)
                 deleted=obj.delete_file()#add logging if file fail to delete
                 if uploaded and deleted:
