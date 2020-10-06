@@ -27,6 +27,8 @@ def upload_notes():
 @uploader.route('/upload',methods=['POST'])
 def upload():
     files=request.files.getlist('notes')
+    uploadedlist=[]
+    failed=[]
     if files:
         creds=FileUploader.getcreds()
         for file in files:
@@ -38,12 +40,11 @@ def upload():
                 uploaded=obj.driveupload(creds)
                 deleted=obj.delete_file()#add logging if file fail to delete
                 if uploaded and deleted:
-                    return{"name":obj.name,"gid":obj.id}
-                  
+                    uploadedlist.append({"name":obj.name,"gid":obj.id})
                 else:
-                    return {'error':'an error occured try again later'}
+                    continue
     else:
         return {'error':'files no files present'}
-    return {'success':'file(s) uploaded succesfully'}
+    return uploadedlist
     
 
