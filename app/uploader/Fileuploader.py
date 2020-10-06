@@ -6,13 +6,13 @@ from googleapiclient.discovery import build
 from google.oauth2 import service_account
 from google.auth.transport.requests import Request
 import requests
-from .. import getuploadpath
+from .. import getuploadpath,getcredspath
 import os.path
 
 
 SCOPES = ['https://www.googleapis.com/auth/drive.file']
 # SERVICE_ACCOUNT_FILE = 'secrets.json'
-SERVICE_ACCOUNT_FILE = os.path.abspath('google-credentials.json')
+SERVICE_ACCOUNT_FILE = getcredspath()
 
 
 class FileUploader:

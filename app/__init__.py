@@ -16,4 +16,5 @@ def getuploadpath():
     return path.join(path.abspath(path.dirname(__file__)),'uploads')
 
     
-    
+def getcredspath():
+    return path.join(path.abspath(path.dirname(__package__)),'google-credentials.json')
