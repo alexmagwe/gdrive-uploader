@@ -1,4 +1,4 @@
-from flask import Flask,request,render_template
+from flask import Flask,request,render_template,jsonify
 import requests
 from .Fileuploader import FileUploader
 from . import uploader
@@ -45,6 +45,6 @@ def upload():
                     continue
     else:
         return {'error':'files no files present'}
-    return uploadedlist
+    return jsonify(uploadedlist)
     
 
