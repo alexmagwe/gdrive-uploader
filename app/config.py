@@ -2,9 +2,9 @@ import os
 from dotenv import load_dotenv
 rootpath=os.path.abspath(os.path.dirname(__file__))
 
-if os.environ.get('FLASK_ENV')=='development':
-    envpath=os.path.abspath(os.path.dirname(__package__))
-    load_dotenv(os.path.join(envpath,'.env'))
+
+envpath=os.path.abspath(os.path.dirname(__package__))
+load_dotenv(os.path.join(envpath,'.env'))
 class Config: 
     FLASK_APP=os.environ.get('FLASK_APP') 
     GOOGLE_CLIENT_ID=os.environ.get('GOOGLE_CLIENT_ID')

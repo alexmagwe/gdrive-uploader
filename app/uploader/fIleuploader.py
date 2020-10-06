@@ -12,7 +12,7 @@ import os.path
 
 SCOPES = ['https://www.googleapis.com/auth/drive.file']
 # SERVICE_ACCOUNT_FILE = 'secrets.json'
-SERVICE_ACCOUNT_FILE = 'google-credentials.json'
+SERVICE_ACCOUNT_FILE = os.path.abspath('google-credentials.json')
 
 
 class FileUploader:
