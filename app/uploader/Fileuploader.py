@@ -49,7 +49,7 @@ class FileUploader:
         res=drive.files().create(body=file_metadata,
                                             media_body=media,
                                             fields='id').execute()
-        if (id:=res.get('id')): 
+        if (id:=res.get('id')):
             self.id=id
             return True
         else:
