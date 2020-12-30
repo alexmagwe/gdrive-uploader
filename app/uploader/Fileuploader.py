@@ -68,7 +68,6 @@ class FileUploader:
                 os.remove(file_path)
                 return True
             except Exception as e:
-                print(sys.exec_info()[0])
                 return False
         else:
             False
