@@ -24,10 +24,10 @@ class FileUploader:
         return creds
 
 
-    def __init__(self,file,name,urls={},*args,**kwargs):
+    def __init__(self,file,name,category,urls={},*args,**kwargs):
 
         self.file=file
-        # self.unit=code
+        self.category=category
         self.name=name
         self.urls=urls
         self.mime=self.getMime()
