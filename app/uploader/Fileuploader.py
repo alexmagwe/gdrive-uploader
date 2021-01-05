@@ -24,8 +24,7 @@ class FileUploader:
         return creds
 
 
-    def __init__(self,file,name,category,urls={},*args,**kwargs):
-
+    def __init__(self,file,name,urls={},*args,**kwargs):
         self.file=file
         self.name=name
         self.urls=urls
