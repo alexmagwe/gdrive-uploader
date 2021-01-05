@@ -27,7 +27,6 @@ class FileUploader:
     def __init__(self,file,name,category,urls={},*args,**kwargs):
 
         self.file=file
-        self.category=category
         self.name=name
         self.urls=urls
         self.mime=self.getMime()

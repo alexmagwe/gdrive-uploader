@@ -39,11 +39,11 @@ def upload():
             if res.get('error'):
                 return res,500
             if (path:=res.get('path')):
-                obj=FileUploader(path,file.filename,file.category)
+                obj=FileUploader(path,file.filename)
                 uploaded=obj.driveupload(creds)
                 deleted=obj.delete_file()#add logging if file fail to delete
                 if uploaded and deleted:
-                    uploadedlist.append({"name":obj.name,"gid":obj.id,"category":obj.category})
+                    uploadedlist.append({"name":obj.name,"gid":obj.id})
                 else:
                     continue
     else:
